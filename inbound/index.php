@@ -27,7 +27,7 @@ include('includes/navbar.php');
  </div> 
 
 <!-- banner -->
-<div id="plan2" class="carousel slide banner_main" data-ride="carousel" >
+<div id="plan2" class="carousel slide banner_main d-none" data-ride="carousel" >
          <div class="carousel-inner">
             <div class="carousel-item active">
                <img class="first-slide" src="images/banner.jpg" alt="First slide">
@@ -45,7 +45,7 @@ include('includes/navbar.php');
  </div> 
 
 <!-- banner -->
-<div id="plan3_yes" class="carousel slide banner_main" data-ride="carousel" >
+<div id="plan3_yes" class="carousel slide banner_main d-none" data-ride="carousel" >
          <div class="carousel-inner">
             <div class="carousel-item active">
                <img class="first-slide" src="images/banner.jpg" alt="First slide">
@@ -65,7 +65,7 @@ include('includes/navbar.php');
  </div> 
 
 <!-- banner -->
-<div id="plan3_no" class="carousel slide banner_main" data-ride="carousel" >
+<div id="plan3_no" class="carousel slide banner_main d-none" data-ride="carousel" >
          <div class="carousel-inner">
             <div class="carousel-item active">
                <img class="first-slide" src="images/banner.jpg" alt="First slide">
@@ -83,42 +83,13 @@ include('includes/navbar.php');
          </div>
  </div> 
 <?php
-include('includes/footer.php');
-include('includes/footerlinks.php');
+ include('includes/footerlinks.php');
 ?>
- <script type="text/javascript" charset="utf-8">
+
+<script type="text/javascript" charset="utf-8">
         function ShowDiv(val) {
-            if (val == 'plan2') {
-                $("div#plan2").removeClass("d-none");
-
-
-                $("div#plan1").addClass("d-none");
-                $("div#plan3_yes").addClass("d-none");
-                $("div#plan3_no").addClass("d-none");
-
-            } else if (val == 'plan1') {
-                $("div#plan1").removeClass("d-none");
-
-                $("div#plan2").addClass("d-none");
-                $("div#plan3_yes").addClass("d-none");
-                $("div#plan3_no").addClass("d-none");
-            } else if (val == 'plan3_yes') {
-                $("div#plan3_yes").removeClass("d-none");
-
-                $("div#plan1").addClass("d-none");
-                $("div#plan2").addClass("d-none");
-                $("div#plan3_no").addClass("d-none");
-            } else if (val == 'plan3_no') {
-                $("div#plan3_no").removeClass("d-none");
-
-                $("div#plan1").addClass("d-none");
-                $("div#plan2").addClass("d-none");
-                $("div#plan3_yes").addClass("d-none");
-            } else {
-                $("div#plan2").addClass("d-none");
-                $("div#plan3_yes").addClass("d-none");
-                $("div#plan3_no").addClass("d-none");
-            }
+            $("div#plan1, div#plan2, div#plan3_yes, div#plan3_no").addClass("d-none");
+            $("div#" + val).removeClass("d-none");
         }
     </script>
 </body>
